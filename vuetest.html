@@ -4,18 +4,12 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+  <title>Testing Vue.js</title>
+  <meta name="description" content="Just a Vue.js app">
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-  <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
 
   <div id="app">
     {{ message }}
@@ -58,7 +52,23 @@
       ></todo-item>
     </ol>
   </div>
-  
+
+  <div id="components-demo">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+  </div>
+
+  <div id="blog-post-test">
+    <blog-post
+      v-for="post in posts"
+      v-bind:key="post.id"
+      v-bind:post="post"
+    ></blog-post>
+  </div>
+
   <script src="index.js"></script>
 </body>
 </html>

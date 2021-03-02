@@ -1,3 +1,35 @@
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+
+Vue.component('blog-post', {
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+      <h3>Title: {{ post.title }}</h3>
+      <p>Content maybe? -- </p>
+      <div v-html="post.content"></div>
+    </div>
+  `
+})
+
+new Vue({ el: '#components-demo' })
+
+new Vue({
+  el: '#blog-post-test',
+  data: {
+    posts: [
+      {id : 1, title : "hello", content : "<p>testing testing 1, 1, 1</p>"},
+      {id : 2, title : "yes", content : "<p>testing testing 2, 2, 2</p>"}
+    ]
+  }
+})
+
 var app = new Vue({
   el: '#app',
   data: {
